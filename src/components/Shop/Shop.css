@@ -1,0 +1,8 @@
+.cart-btn {
+    display: flex;
+    flex-direction: column;
+    margin-top: 300px;
+}
+.btn-top{
+    margin-bottom: 15px;
+}

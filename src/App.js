@@ -1,10 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Shop from './components/Shop/Shop';
 
 function App() {
   return (
     <div className="App">
-      <h2>Welcom to React Apps</h2>
+      <Shop></Shop>
     </div>
   );
 }

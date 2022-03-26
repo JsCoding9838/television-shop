@@ -1,3 +1,6 @@
+.shop-container{
+    margin-top: 92px;
+}
 .cart-btn {
     display: flex;
     flex-direction: column;
@@ -6,6 +9,10 @@
 .btn-top{
     margin-bottom: 15px;
 }
-.cart-container{
+.cart-container {
     background-color: rgb(241, 232, 232);
+    position: fixed;
+    top: 56px;
+    right: 0px;
+    border-radius: 10px;
 }

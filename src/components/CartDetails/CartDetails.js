@@ -7,7 +7,7 @@ const  CartDetails = ({product}) => {
     return (
         <div className='cart-items-area d-flex align-items-center ms-2'>
             <span className="cart-image"><img className="img-fluid" src={img} alt="" /></span>
-            <span className='cart-text fw-bold'><li>{name}</li></span>
+            <span className='cart-text fw-bold'><li>{name.slice(0, 30)}...</li></span>
             <FontAwesomeIcon className="icon" icon= {faShoppingCart}></FontAwesomeIcon>
 
         </div>

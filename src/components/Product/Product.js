@@ -10,9 +10,9 @@ const Product = ({product, handler}) => {
         
         <div className="col cart-items">
             <div className="card h-100">
-                <img src={img} className="card-img-top" alt="..."/>
+                <img src={img} className="card-img-top img-fluid w-100 h-100" alt="..."/>
                 <div className="card-body">
-                <h5 className="card-title fw-bold">{name}</h5>
+                <h5 className="card-title fw-bold">{name.slice(0, 80)}</h5>
                     <p className="card-text fw-bold">Price: ${price}</p>
                 </div>
                 <div className="d-grid w-75 mx-auto">

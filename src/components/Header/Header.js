@@ -4,8 +4,6 @@ import './Header.css'
 const Header = () => {
     return (
         <div className='header-section container-fluid p-0'>
-            {/* <h2>Electronics Products</h2> */}
-
             <nav className="navbar navbar-expand-lg navbar navbar-dark bg-primary px-5">
                 <div className="container-fluid">
                     <a className="navbar-brand fw-bold text-uppercase" href="#">Television Shop</a>

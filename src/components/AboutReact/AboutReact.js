@@ -11,7 +11,7 @@ const AboutReact = () => {
                         <div className="card-body">
                             <h5 className="card-title">How is React Works?</h5>
                             <p className="card-text">
-                                React a javascript based UI development library. and it is widely used in web development. this is most commonly used frontend libraries for web development. and easy to understand the react library
+                                React a javascript based UI development library. and it is widely used in web development. this is most commonly used frontend libraries for web development. and easy to understand the react library. and whenever the root element is of a different type  the entire is destryed and a new tree is build from scratch i e.
                             </p>
                         </div>
                     </div>

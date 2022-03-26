@@ -35,7 +35,6 @@ const Shop = () => {
     const choosenHandler = (products) => {
         const randomProduct = products[Math.floor(Math.random() * products.length)];
         const {name, price} = randomProduct;
-        // console.log(randomProduct);
         if(randomProduct){
             Swal.fire({
                 title: (`${name}`),
@@ -50,14 +49,10 @@ const Shop = () => {
         let cartDetails = [];
         setCart(cartDetails);
     }
-
-    // console.log(cart);
     return (
         <>
-            {/* <h1 className="text-success">Electronics Products</h1> */}
             <div className="shop-container mb-4 row">
                 <div className="product-container col-md-9">
-                    {/* <h2>Product Container</h2> */}
                     <div className="row row-cols-1 row-cols-md-3 g-4">
                         {
                             products.map(product => <Product handler= {handler} product={product} key={product.id}></Product>)

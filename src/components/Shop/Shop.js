@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import CartDetails from '../CartDetails/CartDetails';
 import Product from '../Product/Product';
+import Swal from "sweetalert2";
 import './Shop.css'
 
 const Shop = () => {
@@ -13,23 +14,47 @@ const Shop = () => {
     }, [])
 
     
-    const handler = (product2) => {
-        // console.log(product);
-        let newArray  = [];
-        const exits = products.find(product => product.id === product2.id);
-        if(!exits){
-            newArray.push(product2);
+
+    const handler = (product) => {
+        if (cart.length < 4) {
+            const exist = cart.find(products => products.id === product.id)
+            if(!exist) {
+            const newCart = [...cart, product];
+            setCart(newCart);
+            }
+            
+        } else {
+            Swal.fire({
+            title: "Error!",
+            text: "Do you want to continue",
+            icon: "error",
+            confirmButtonText: "close",
+            });
         }
-        else{
-            alert('already exsits')
+    };
+
+    const choosenHandler = (products) => {
+        const randomProduct = products[Math.floor(Math.random() * products.length)];
+        const {name} = randomProduct;
+        // console.log(randomProduct);
+        if(randomProduct){
+            Swal.fire({
+                title: (`${name}`),
+                text: "Do you want to continue",
+                icon: "error",
+                confirmButtonText: "close",
+            });
         }
-        setCart([...newArray, cart]);
+    }
+
+    const removedItems = () => {
+        
     }
 
     // console.log(cart);
     return (
         <>
-            <h1 className="text-success">Electronics Products</h1>
+            {/* <h1 className="text-success">Electronics Products</h1> */}
             <div className="shop-container row">
                 <div className="product-container col-md-9 border border-danger">
                     {/* <h2>Product Container</h2> */}
@@ -43,11 +68,13 @@ const Shop = () => {
                 <div className="cart-container col-md-3 border border-success">
                     <h1>Cart Summary</h1>
                     
-                    <CartDetails product= {cart}></CartDetails>
+                    {
+                        cart.map(product => <CartDetails product={product} key={product.id} />)
+                    }
                 
                     <div className='cart-btn'>
-                        <button className='btn-top btn btn-primary'>Shoose</button>
-                        <button className='btn btn-danger'>Removed </button>
+                        <button onClick={() => {choosenHandler(cart)}} className='btn-top btn btn-primary'>Choose one</button>
+                        <button onClick={() => {removedItems()}}className='btn btn-danger'>Removed</button>
                     </div>
                 </div>
             </div>

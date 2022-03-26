@@ -15,7 +15,7 @@ const Product = ({product, handler}) => {
                     <p className="card-text">{price}</p>
                 </div>
                 <div className="">
-                    <button onClick={()=> {handler(product)}} className="btn btn-info w-100">ADD TO CART <span><FontAwesomeIcon icon= {faShoppingCart}></FontAwesomeIcon></span> </button>
+                    <button onClick={()=> {handler(product)}} className="btn btn-info w-100 fw-bold fs-5 text-white">ADD TO CART <span className='ms-2 fs-5'><FontAwesomeIcon icon= {faShoppingCart}></FontAwesomeIcon></span> </button>
 
                 </div>
             </div>

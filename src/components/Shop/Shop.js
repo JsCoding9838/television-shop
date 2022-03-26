@@ -25,30 +25,31 @@ const Shop = () => {
             
         } else {
             Swal.fire({
-            title: "Error!",
-            text: "Do you want to continue",
-            icon: "error",
-            confirmButtonText: "close",
+            title: "Can't Selected more than 4!",
+            text: "Something went wrong",
+            icon: "warning",
+            confirmButtonText: "Close",
             });
         }
     };
 
     const choosenHandler = (products) => {
         const randomProduct = products[Math.floor(Math.random() * products.length)];
-        const {name} = randomProduct;
+        const {name, price} = randomProduct;
         // console.log(randomProduct);
         if(randomProduct){
             Swal.fire({
                 title: (`${name}`),
-                text: "Do you want to continue",
-                icon: "error",
-                confirmButtonText: "close",
+                text: (`Price: $ ${price}`),
+                icon: "info",
+                confirmButtonText: "Close",
             });
         }
     }
 
     const removedItems = () => {
-        
+        let cartDetails = [];
+        setCart(cartDetails);
     }
 
     // console.log(cart);
@@ -66,15 +67,17 @@ const Shop = () => {
                 </div>
 
                 <div className="cart-container col-md-3 border border-success">
-                    <h1>Cart Summary</h1>
+                    <div className="mt-3 mb-4">
+                        <h2 className="fw-bold">Cart Summary</h2>
+                    </div>
                     
                     {
                         cart.map(product => <CartDetails product={product} key={product.id} />)
                     }
                 
-                    <div className='cart-btn'>
-                        <button onClick={() => {choosenHandler(cart)}} className='btn-top btn btn-primary'>Choose one</button>
-                        <button onClick={() => {removedItems()}}className='btn btn-danger'>Removed</button>
+                    <div className='cart-btn d-grid gap-2 mx-auto mb-3'>
+                        <button onClick={() => {choosenHandler(cart)}} className='btn-top btn btn-primary  w-75 mx-auto'>CHOOSE ONE FOR ME</button>
+                        <button onClick={() => {removedItems()}}className='btn btn-danger w-75 mx-auto'>CHOOSE AGAIN</button>
                     </div>
                 </div>
             </div>

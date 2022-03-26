@@ -1,24 +1,15 @@
-// import React, { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import './CartDetails.css'
 
 const  CartDetails = ({product}) => {
-
-    // console.log(product);
-
-    const {name} = product;
-
-    // const [cartItems, setCartItems] = useState([]);
-    // let name = '';
-    // if(product.length < 4) {
-    //     for(const cart of product) {
-    //         // console.log(cart.name);
-    //         name = cart.name;
-    //     }
-    // }
-
+    const {name, img} = product;
     return (
-        <div className='cart-items-area'>
-            <p className='cart-text fw-bold'><li>{name}</li></p>
+        <div className='cart-items-area d-flex align-items-center ms-2'>
+            <span className="cart-image"><img className="img-fluid" src={img} alt="" /></span>
+            <span className='cart-text fw-bold'><li>{name}</li></span>
+            <FontAwesomeIcon className="icon" icon= {faShoppingCart}></FontAwesomeIcon>
+
         </div>
     );
 };

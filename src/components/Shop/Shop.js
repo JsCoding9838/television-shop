@@ -14,7 +14,7 @@ const Shop = () => {
     }, [])
 
     
-
+    
     const handler = (product) => {
         if (cart.length < 4) {
             const exist = cart.find(products => products.id === product.id)
@@ -56,7 +56,7 @@ const Shop = () => {
     return (
         <>
             {/* <h1 className="text-success">Electronics Products</h1> */}
-            <div className="shop-container row">
+            <div className="shop-container mb-4 row">
                 <div className="product-container col-md-9 border border-danger">
                     {/* <h2>Product Container</h2> */}
                     <div className="row row-cols-1 row-cols-md-3 g-4">
